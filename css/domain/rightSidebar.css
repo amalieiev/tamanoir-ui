@@ -1,0 +1,66 @@
+.right-sidebar-container {
+    position: absolute;
+    right: -35%;
+    top: 40px;
+    width: 35%;
+    border: 1px solid #007094;
+    background: #fff;
+    -webkit-transition: right 1s; /* Safari */
+    transition: right 1s;
+}
+.right-sidebar-container.active {
+    right: 0;
+}
+
+.right-sidebar-view .title {
+    line-height: 30px;
+    font-weight: bold;
+    color: white;
+    padding-left: 20px;
+    background-color: #007094;
+}
+
+.remove-right-sidebar {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.columns-container {
+    overflow-y: auto;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label {
+    /*color:#f2f2f2;*/
+    /*font-family:Arial, sans-serif;*/
+    /*font-size:14px;*/
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    text-align: center;
+    border: 1px solid #007094;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+/*input[type="checkbox"]:checked + label span {*/
+    /*border: 1px solid #F00;*/
+/*}*/
+
+input[type="checkbox"] + label span .foundicon-checkmark {
+     line-height: 19px;
+     color: #FFF;
+}
+
+input[type="checkbox"]:checked + label span .foundicon-checkmark {
+    color: #007094;
+}

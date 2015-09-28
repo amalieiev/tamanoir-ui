@@ -1,0 +1,15 @@
+.sidebar-view .column-view {
+    border-bottom: 1px solid #f1f1f1;
+    padding-left: 20px;
+    cursor: move;
+    color: #007094;
+}
+
+.sidebar-view .column-view:hover {
+    color: #049bdf;
+}
+
+.sidebar-view .column-view:active {
+    background-color: #049bdf;
+    color: white;
+}

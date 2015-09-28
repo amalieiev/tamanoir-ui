@@ -1,0 +1,12 @@
+.adhoc-view .table-view td {
+    cursor: pointer;
+}
+
+.adhoc-view .table-view td:hover {
+    background-color: #049bdf;
+    color: white;
+}
+
+.adhoc-view .table-view th {
+    cursor: move;
+}

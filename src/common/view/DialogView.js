@@ -7,6 +7,9 @@ define(function (require) {
         _ = require('underscore'),
         DialogViewTemplate = require('text!common/template/DialogViewTemplate.html');
 
+    /**
+     * @class common.view.DialogView
+     */
     var DialogView = Backbone.View.extend({
         events: {
             'click button[data-action]': 'onActionButtonClick',
@@ -48,10 +51,6 @@ define(function (require) {
             });
         }
     }, {
-        /**
-         * Message config
-         * @param {String | Object} options
-         */
         showMessage: function (options) {
             options = typeof options === 'object' ? options : {
                 icon: 'idea',
@@ -62,10 +61,6 @@ define(function (require) {
             return new DialogView(options).render();
         },
 
-        /**
-         * Message config
-         * @param {String | Object} options
-         */
         showError: function (options) {
             options = typeof options === 'object' ? options : {
                 icon: 'error',

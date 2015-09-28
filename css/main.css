@@ -19,7 +19,16 @@
 @import "domain/domainDesigner.css";
 @import "domain/connection.css";
 @import "domain/sidebar.css";
+@import "domain/rightSidebar.css";
 @import "domain/tableListItem.css";
 @import "domain/joinTypeWidget.css";
 @import "domain/tables.css";
 @import "domain/table.css";
+
+/*adhoc*/
+@import "adhoc/adhocDesigner.css";
+@import "adhoc/sidbar.css";
+@import "adhoc/column.css";
+@import "adhoc/chart.css";
+@import "adhoc/chartDropZone.css";
+@import "adhoc/table.css";

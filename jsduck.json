@@ -1,0 +1,11 @@
+{
+  "--title": "Tamanoir",
+  "--output": "docs",
+  "--exclude": [
+    "src/bower_components",
+    "src/patched"
+  ],
+  "--": [
+    "src"
+  ]
+}

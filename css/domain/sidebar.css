@@ -2,3 +2,22 @@
     border-right: 1px solid #007094;
     overflow: auto;
 }
+
+.sidebar-view > ul > li > div {
+    background-color: #007095;
+    color: #fff;
+    box-shadow: none;
+}
+.sidebar-view ul li div {
+    padding: 5px 10px;
+    box-shadow: 0 1px 0px rgb(0, 112, 149);
+}
+.sidebar-view ul li {
+    cursor: move;
+}
+.inside-list {
+    margin: 0;
+}
+.table-list-view {
+    margin: 0;
+}

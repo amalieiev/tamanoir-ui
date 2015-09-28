@@ -20,16 +20,23 @@ define(function (require) {
 
         initialize: function () {
             this.render();
+            this.listenTo(this.model, 'change:dragged', this.onDraggedChange)
         },
 
         render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
+            if(!this.model.get('dragged')) {
+                this.$el.html(this.template(this.model.toJSON()));
+            }
             return this;
         },
 
         onDragStart: function () {
             console.log('dragstart:sidebarTable');
             Tamanoir.trigger('dragstart:sidebarTable', this.model);
+        },
+        onDraggedChange: function(model) {
+            console.log(model);
+            this.$el.hide();
         }
     });
 });

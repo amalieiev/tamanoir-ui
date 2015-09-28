@@ -1,0 +1,18 @@
+.adhoc-view .adhoc-header {
+    height: 40px;
+    background: #333333;
+    color: #ffffff;
+}
+
+.adhoc-view .productTitle,
+.adhoc-view .toolbar-item {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.adhoc-view .toolbar-item:hover {
+    background: #222222;
+}

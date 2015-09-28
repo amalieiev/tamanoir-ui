@@ -12,11 +12,12 @@ define(function (require) {
         template: _.template(TableViewTemplate),
         events: {
             'click th div': 'onTableHeaderClick',
-            'dragstart th div': 'onTableHeaderDragStart',
+            'dragstart th div': 'onTableHeaderDragstart',
             'scroll': 'onScroll'
         },
         initialize: function () {
             this.listenTo(this.collection, 'reset', this.render);
+
             this.render();
         },
         render: function () {
@@ -39,13 +40,10 @@ define(function (require) {
                 this.reverse = true;
             }
         },
-        onTableHeaderDragStart: function (event) {
-            var name = $(event.target).text().trim(),
-                data = this.collection.map(function (model) {
-                    return model.get(name);
-                });
-            console.log('dragstart', name, data);
-            Tamanoir.trigger('table:header:dragstart', name, data);
+        onTableHeaderDragstart: function (event) {
+            var name = $(event.target).text().trim();
+
+            Tamanoir.trigger('table:header:dragstart', name);
         },
         onScroll: function (event) {
             this.$('.inner').css({

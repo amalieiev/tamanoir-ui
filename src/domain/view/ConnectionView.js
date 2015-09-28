@@ -26,7 +26,11 @@ define(function (require) {
             this.listenTo(this.model, 'change:metadata', this.onConnectionMetadataLoaded);
             this.listenTo(this.tablesCollection, 'reset', this.render);
 
-            this.model.fetchMetadata();
+            if (this.model.get('metadata')) {
+                this.onConnectionMetadataLoaded();
+            } else {
+                this.model.fetchMetadata();
+            }
         },
 
         render: function () {
@@ -50,8 +54,8 @@ define(function (require) {
             Tamanoir.trigger('dragstart:sidebarConnection', this.tablesCollection);
         },
 
-        onConnectionMetadataLoaded: function (connectionModel) {
-            this.tablesCollection.reset(connectionModel.get('metadata'));
+        onConnectionMetadataLoaded: function () {
+            this.tablesCollection.reset(this.model.get('metadata'));
         },
 
         remove: function () {

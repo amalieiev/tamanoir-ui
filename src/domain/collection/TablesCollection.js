@@ -38,6 +38,71 @@ define(function (require) {
             }, []);
         },
 
+        getCategories: function () {
+            var self = this;
+
+            return this.reduce(function (memo, table) {
+                memo = memo.concat(_.reduce(table.get('items'), function (innerMemo, column) {
+                    if (self.isCategory(column.type)) {
+                        innerMemo.push(column.name);
+                    }
+
+                    return innerMemo;
+                }, []));
+
+                return memo;
+            }, []);
+        },
+
+        getDates: function () {
+            var self = this;
+
+            return this.reduce(function (memo, table) {
+                memo = memo.concat(_.reduce(table.get('items'), function (innerMemo, column) {
+                    if (self.isDate(column.type)) {
+                        innerMemo.push(column.name);
+                    }
+
+                    return innerMemo;
+                }, []));
+
+                return memo;
+            }, []);
+        },
+
+        getNumbers: function () {
+            var self = this;
+
+            return this.reduce(function (memo, table) {
+                memo = memo.concat(_.reduce(table.get('items'), function (innerMemo, column) {
+                    if (self.isNumber(column.type)) {
+                        innerMemo.push(column.name);
+                    }
+
+                    return innerMemo;
+                }, []));
+
+                return memo;
+            }, []);
+        },
+
+        isNumber: function (type) {
+            return /Bite/.test(type) ||
+                /Short/.test(type) ||
+                /Interger/.test(type) ||
+                /Folat/.test(type) ||
+                /Double/.test(type);
+        },
+
+        isCategory: function (type) {
+            return /String/.test(type) ||
+                /Char/.test(type);
+        },
+
+        isDate: function (type) {
+            return /Date/.test(type);
+        },
+
         getSelectedTables: function () {
             return this.reduce(function (memo, table) {
                 if (table.get('selected').length) {
@@ -101,17 +166,17 @@ define(function (require) {
                 edges: []
             };
             var selected = self.getTables();
-            if(this.size() > 1) {
-                self.each(function(item) {
+            if (this.size() > 1) {
+                self.each(function (item) {
                     model.nodes.push({id: item.get('name'), label: item.get('name')});
-                    _.each(item.get('items'), function(column) {
-                        if(column.referenceTo && _.contains(selected, item._getRelatedTableName(column))) {
+                    _.each(item.get('items'), function (column) {
+                        if (column.referenceTo && _.contains(selected, item._getRelatedTableName(column))) {
                             model.edges.push({from: item.get('name'), to: item._getRelatedTableName(column)});
                         }
                     });
                 });
             } else {
-                self.each(function(item) {
+                self.each(function (item) {
                     model.nodes.push({id: item.get('name'), label: item.get('name')});
                     delete model.edges;
                 });

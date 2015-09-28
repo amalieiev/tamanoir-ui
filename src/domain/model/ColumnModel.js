@@ -1,18 +1,17 @@
 /**
- * Created by Artem.Malieiev on 7/1/2015.
+ * Created by valeriy.abornyev on 9/14/2015.
  */
 define(function (require) {
-    var Backbone = require('backbone');
+    var Backbone = require('backbone'),
+        _ = require('underscore');
 
     return Backbone.Model.extend({
-        idAttribute: 'name',
         defaults: {
-            name: '',
-            label: '',
-            selected: false,
-            table: '',
-            groupAction: '',
-            type: ''
+            isIdentifier: undefined,
+            name: undefined,
+            referenceTo: undefined,
+            type: undefined,
+            checked: undefined
         }
     });
 });

@@ -1,0 +1,21 @@
+.adhoc-view .sidebar-view ul {
+    margin: 0;
+    padding: 0;
+}
+
+.adhoc-view .sidebar-view .title {
+    line-height: 30px;
+    font-weight: bold;
+    cursor: move;
+    color: white;
+    padding-left: 20px;
+    background-color: #007094;
+}
+
+.adhoc-view .sidebar-view .subtitle {
+    line-height: 20px;
+    font-weight: bold;
+    color: white;
+    padding-left: 20px;
+    background-color: #007094;
+}

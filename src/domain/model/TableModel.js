@@ -6,13 +6,17 @@ define(function (require) {
         _ = require('underscore');
 
     return Backbone.Model.extend({
+        idAttribute: 'name',
         defaults: {
             connectionId: undefined,
             name: undefined,
             label: undefined,
             items: undefined,
-            selected: []
+            selected: [],
+            dragged: false
         },
+
+        idAttribute: 'name',
 
         getRelatedTableNames: function () {
             return _.reduce(this.get('items'), function (memo, column) {

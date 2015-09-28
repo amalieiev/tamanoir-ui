@@ -7,14 +7,14 @@ define(function (require) {
         _ = require('underscore');
 
     return Backbone.Collection.extend({
-        parseNumbers: function (data) {
-            return _.map(data, function (value) {
-                _.each(value, function (val, key) {
-                    if ($.isNumeric(val)) {
-                        value[key] = Number(val);
-                    }
-                });
-                return value;
+        getDataByName: function (name) {
+            return this.map(function (value) {
+                return value.get(name);
+            });
+        },
+        getNumberDataByName: function (name) {
+            return this.map(function (value) {
+                return parseFloat(value.get(name));
             });
         }
     });
